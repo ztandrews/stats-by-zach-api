@@ -11,7 +11,9 @@ All endpoints are accessible at:
 ---
 
 ## Important Notes
-
+- **Avaliable Data**:  
+  As of now, I only have data from the 2023-2024 and 2024-2025 seasons avaliable, but have plans to backdate more in the future.
+  
 - **Data Updates**:  
   Data is updated daily, with a batch process running around **5:00 AM EST**. Live updates during games are a future enhancement.
   
