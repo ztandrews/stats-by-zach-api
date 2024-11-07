@@ -1,4 +1,4 @@
-# Stats By Zach API
+# Stats By Zach API Documentation
 
 Welcome to the official documentation for the REST API powering [statsbyzach.com](https://statsbyzach.com). This API is built for extracting advanced NHL data in a simpler way than using the publicly available NHL API, as that data needs expensive pre-processing to extract this same info. I made this to abstract that entire process and provide an easy interface to retrieve that data.
 
