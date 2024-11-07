@@ -1,8 +1,8 @@
 # Stats By Zach API
 
-Welcome to the official documentation for the REST API powering [statsbyzach.com](https://statsbyzach.com). This API is useful for extracting NHL data in a more simple way than using the publicly avalble NHL API.
+Welcome to the official documentation for the REST API powering [statsbyzach.com](https://statsbyzach.com). This API is built for extracting advanced NHL data in a simpler way than using the publicly available NHL API, as that data needs expensive pre-processing to extract this same info. I made this to abstract that entire process and provide an easy interface to retrieve that data.
 
-All data in the API is sourced from the NHL's API and TYML reports, but gets heavily transformed through various of my own scrapers and pipelines and stored in my own database to provide easily accessbile data at all levels of the league (game, team, line, pair, player etc). The xG metrics that are present in these endpoints are my own, and if you want more insight on that I will be posting a freshly updated article about that model on my website soon. 
+All data in the API is sourced from the NHL's API and HTML reports but gets heavily transformed through various of my own scrapers and pipelines and stored in my own database to provide easily accessible data at all levels of the league (game, team, line, pair, player etc). The xG metrics that are present in these endpoints are my own, and if you want more insight on that I will be posting a freshly updated article about that model on my website soon. 
 
 ## Base URL  
 All endpoints are accessible at:  
@@ -16,7 +16,7 @@ All endpoints are accessible at:
   Data is updated daily, with a batch process running around **5:00 AM EST**. Live updates during games are a future enhancement.
   
 - **Data Structures**:  
-  The data is structued in a way that I best designed for my website, so keep that in mind when combing through the data. There are defineitly things I could have done better, but to me, this is a nice way to easily integrate this data within my site
+  The data is structured in a way that I designed for my website, so keep that in mind when combing through the data. There are things I could have done better probably, but to me, this is a nice way to easily integrate this data within my site.
   
 - **Usage and Requests**:  
   The API infrastructure is funded out of pocket, so please be mindful of your usage. Feel free to explore and use the API, but avoid excessive requests to help keep it accessible for everyone.
@@ -25,7 +25,7 @@ All endpoints are accessible at:
   As new features are added to the site, additional endpoints will be documented here. Be sure to check back regularly for updates.
 
 - **Conventions**:
-  Here is a breif index of common conventions you'll see in this API
+  Here is a brief index of common conventions you'll see in this API
   
 | **Convention** | **Definition**                                                                                       |
 |----------------|-----------------------------------------------------------------------------------------------------|
@@ -393,3 +393,4 @@ Provides performance metrics for goalies in a specific game across all situation
     }
   ]
 }
+![image](https://github.com/user-attachments/assets/12a3d9dc-7596-4c00-b472-a887c8d65d96)
