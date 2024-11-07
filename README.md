@@ -4,11 +4,6 @@ Welcome to the official documentation for the REST API powering [statsbyzach.com
 
 All data in the API is sourced from the NHL's API and HTML reports but gets heavily transformed through various of my own scrapers and pipelines and stored in my own database to provide easily accessible data at all levels of the league (game, team, line, pair, player etc). The xG metrics that are present in these endpoints are my own, and if you want more insight on that I will be posting a freshly updated article about that model on my website soon. 
 
-## Base URL  
-All endpoints are accessible at:  
-**[https://stats-by-zach-api.onrender.com/](https://stats-by-zach-api.onrender.com/)**
-
----
 
 ## Important Notes
 - **Avaliable Data**:  
@@ -39,8 +34,13 @@ All endpoints are accessible at:
 | **`player_id`**| Player ID according to the NHL API                                                                   |
 | **`game_id`**  | Game ID according to the NHL API                                                                     |
 
-## Endpoints
 
+## Base URL  
+All endpoints are accessible at:  
+**[https://stats-by-zach-api.onrender.com/](https://stats-by-zach-api.onrender.com/)**
+
+
+## Endpoints
 ### Game Endpoints
 All game-specific data can be retrieved using the `/game/{id}` routes.
 
@@ -381,17 +381,39 @@ Provides performance metrics for goalies in a specific game across all situation
 - **Response**:
   A list of goalie stats for each goalie in the game.
 
-```json
-{
-  "goalie_stats": [
-    {
-      "team": "NYR",
-      "player_id": 8478048,
-      "player": "IGOR SHESTERKIN",
-      "all_sit_f_faced": 50,
-      "all_sit_s_faced": 37,
-      "all_sit_xg_faced": 3.872,
-      "all_sit_g_allowed": 2
-    }
-  ]
-}
+  ```json
+  {
+    "goalie_stats": [
+      {
+        "team": "NYR",
+        "player_id": 8478048,
+        "player": "IGOR SHESTERKIN",
+        "all_sit_f_faced": 50,
+        "all_sit_s_faced": 37,
+        "all_sit_xg_faced": 3.872,
+        "all_sit_g_allowed": 2
+      }
+    ]
+  }
+
+## Example Usage in Python
+```
+import requests
+import pandas as pd
+
+# API URL
+url = "https://stats-by-zach-api.onrender.com/game/2024020185/line-stats"
+
+# Fetch the data from the API and save to a DF
+response = requests.get(url)
+data = response.json()
+line_stats = data['line_stats']
+df = pd.DataFrame(line_stats)
+
+# Display data
+df.head(1)
+```
+Output:
+| Team | Line ID               | Line Name                                  | Line Name Trimmed     | 5v5 CF | 5v5 CA | 5v5 FF | 5v5 FA | 5v5 SF | 5v5 SA | 5v5 GF | 5v5 GA | 5v5 xGF | 5v5 xGA | 5v5 TOI |
+|------|------------------------|--------------------------------------------|------------------------|--------|--------|--------|--------|--------|--------|--------|--------|---------|---------|---------|
+| NYI  | 8475314-8476419-8477500| BO HORVAT - ANDERS LEE - JEAN-GABRIEL PAGEAU | HORVAT - LEE - PAGEAU | 9      | 9      | 7      | 7      | 5      | 6      | 0      | 0      | 0.547   | 0.214   | 12.4    |
