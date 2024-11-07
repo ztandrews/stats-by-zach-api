@@ -6,7 +6,7 @@ All data in the API is sourced from the NHL's API and HTML reports but gets heav
 
 ## Base URL  
 All endpoints are accessible at:  
-**[https://stats-by-zach-api.onrender.com/](https://statsbyzach.com)**
+**[https://stats-by-zach-api.onrender.com/](https://stats-by-zach-api.onrender.com/)**
 
 ---
 
