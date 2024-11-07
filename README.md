@@ -393,4 +393,3 @@ Provides performance metrics for goalies in a specific game across all situation
     }
   ]
 }
-![image](https://github.com/user-attachments/assets/12a3d9dc-7596-4c00-b472-a887c8d65d96)
